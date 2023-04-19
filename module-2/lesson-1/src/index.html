@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue.js</title>
+    <!-- TailwindCss -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- vue 3 CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- main css -->
+  </head>
+  <body>
+    <div id="root">
+      <main>
+        <section
+          class="todo min-h-screen w-full flex justify-center items-center"
+        >
+          <div class="container mx-auto">
+            <div
+              class="todo__wrapper w-[600px] min-h-[600px] shadow-2xl mx-auto p-4"
+            >
+              <h1 class="text-3xl text-center font-bold my-4 text-pink-700">
+                MY TODO APP
+              </h1>
+              <div class="flex">
+                <input
+                  type="text"
+                  placeholder="Enter task title"
+                  v-bind:value="title"
+                  v-on:input="$event=>title=$event.target.value"
+                  class="p-3 w-full focus:ring-2 focus:ring-pink-500 duration-200 outline-none border"
+                />
+                <button v-on:click="addTask"
+                
+                  class="p-3 text-white bg-pink-700 focus:ring-2 ring-slate-600"
+                >
+                  ADD
+                </button>
+              </div>
+
+              <div class="flex p-1 mt-4">
+                <div
+                  class="item p-4 w-[45%] font-bold text-white rounded-md bg-red-500 mx-3"
+                >
+                  Todo Done : 50
+                </div>
+                <div
+                  class="item p-4 w-[45%] font-bold text-white rounded-md bg-green-500 mx-3"
+                >
+                  Todo On Progress : 50
+                </div>
+              </div>
+
+              <ul class="w-full p-4">
+
+                <h1 v-if="!task.length" class="text-center">
+                    EMPTY TASK LIST !!!
+                </h1>
+
+                <li v-else v-for="(item,index) in task" class="p-4 my-2 shadow border flex items-center justify-between">
+                  <span class="text-pink-800 font-bold mr-4">{{index+1}}</span>
+                  <span>{{item.title}}</span>
+                  <button class="bg-red-700 text-white p-2 rounded-2xl focus:ring-2">
+                    Remove
+                  </button>
+                </li>
+
+
+              </ul>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+
+  <script src="./app.js"></script>
+</html>
