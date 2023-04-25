@@ -53,7 +53,9 @@
                 </div>
               </div>
 
-              <ul class="w-full p-4">
+              <h1 v-if="!load" class="text-center text-2xl text-red-600">LOADING . . . </h1>
+
+              <ul v-else class="w-full p-4">
 
                 <h1 v-if="!task.length" class="text-center">
                     EMPTY TASK LIST !!!
@@ -69,6 +71,8 @@
 
 
               </ul>
+
+
             </div>
           </div>
         </section>
