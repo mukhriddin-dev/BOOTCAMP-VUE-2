@@ -23,14 +23,19 @@ export default {
 
 <template>
   <Header :toggle="toggleMenu" />
+  
   <main class="flex">
+
     <aside v-if="toggle" class="top-0 bg-white mt-[-56px]">
       <Sidebar />
     </aside>
 
+   
+
     <section class="main max-w-full grow">
-      <router-view></router-view>
+    <router-view></router-view>
     </section>
+
   </main>
 </template>
 

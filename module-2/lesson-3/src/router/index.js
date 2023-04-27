@@ -1,29 +1,28 @@
 import {createRouter, createWebHashHistory} from 'vue-router';
+
 import Home from "../views/Home/Home.vue";
 import Empolyee from "../views/Empolyee/Empolyee.vue";
 import ErrorPage from "../views/Error/ErrorPage.vue";
 
 
-const router = createRouter({   
+const router = createRouter({
 
     history: createWebHashHistory(import.meta.env.BASE_URL),
+    
     routes: [
-
         {
             path: '/',
             component: Home,
-            name: 'Home'
+            name: 'Home',
         }, {
             path: '/add-employee',
             component: Empolyee,
             name: 'Employee'
-        },
-        {
-            path:'/:pathMatch(.*)*',
+        }, {
+            path: '/:pathMatch(.*)*',
             name: 'Error',
-            component:ErrorPage
+            component: ErrorPage
         }
-
 
     ]
 

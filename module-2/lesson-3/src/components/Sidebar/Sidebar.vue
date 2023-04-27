@@ -8,26 +8,31 @@ export default {
     };
   },
 };
-
 </script>
 
 <template>
-  <div class="siebar w-[250px] shadow-lg min-h-screen relative" >
+  <div class="siebar w-[250px] shadow-lg min-h-screen relative">
     <a href="/" class="logo text-center text-2xl p-3 block text-purple-700">DASHBOARD</a>
 
-  
-
-    <ul class="list" >
-      <li
-        class="list__item p-4 shadow my-2 rounded-md bg-purple-50 hover:bg-purple-200 hover:text-purple-900 duration-100"
-        v-for="el in navlinks">
-        <router-link :to="el.link" class="list__item--link text-xl">
-          <i :class="el.icon"></i> <span class="ms-3">{{ el.title }}</span>
-        </router-link>
-      </li>
-    </ul>
-
+    <div class="list">
+      <router-link
+        class="list__item font-bold p-4 block shadow my-2  bg-purple-50 hover:bg-purple-700 hover:text-white duration-100"
+        v-for="el in navlinks"
+        :to="el.link"
+      >
+        <i :class="el.icon"></i> <span class="ms-3">{{ el.title }}</span>
+      </router-link>
+    </div>
   </div>
 </template>
 
-<style></style>
+<style scoped>
+
+.list__item {
+  border-radius: 0 6px 6px 0;
+}
+.router-link-active {
+  background-color: blueviolet;
+  color: #fff;
+}
+</style>
