@@ -17,7 +17,7 @@ export default {
 
       <a href="#" class="logo ms-10 text-center text-2xl p-3 block text-purple-700">DASHBOARD</a>
 
-      <div class="flex">
+      <div class="flex w-[170px]">
 
         <User user="Sarderbek"> John Doe </User>   
 
