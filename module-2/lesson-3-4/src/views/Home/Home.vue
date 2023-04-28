@@ -7,6 +7,7 @@ export default {
 <template>
   <div class="bg-purple-100 p-5 rounded-md max-w-full h-[91vh] m-2">
     <h1 class="text-xl">HOME PAGE</h1>
+
   </div>
 </template>
 

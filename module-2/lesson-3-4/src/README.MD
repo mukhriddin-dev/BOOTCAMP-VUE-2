@@ -13,6 +13,6 @@
 1. AUTH PAGE
 2. GUARD
 3. DIYNAMIC ROUTING
-4. Router methods
+4. Router methods: push("/")
 5. Redirect
 
