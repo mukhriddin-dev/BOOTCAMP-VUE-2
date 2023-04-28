@@ -27,7 +27,13 @@ const router = createRouter({
                     path: '/add-employee',
                     component: Empolyee,
                     name: 'Employee'
-                },
+                }, {
+                    path: '/new-order',
+                    name: 'New-Order',
+                    redirect: {
+                        name: 'Employee'
+                    }
+                }
 
             ]
         }, {
@@ -51,6 +57,10 @@ router.beforeEach((to, from, next) => {
         next({name: 'Login'})
      else 
         next()
+
+
+    
+
 
 })
 
