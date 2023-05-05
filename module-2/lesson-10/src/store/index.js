@@ -3,11 +3,6 @@ import getPost from "../modules/post";
 import counter from "../modules/counter";
 
 const store = createStore({
-
-   
-
-   
-
     modules:{
      getPost,
      counter
