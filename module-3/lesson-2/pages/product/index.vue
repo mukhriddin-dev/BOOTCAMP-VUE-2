@@ -12,24 +12,7 @@
       </div>
 
       <div class="wrapper">
-        <div
-          v-for="el in data"
-          :key="el.id"
-          class="card shadow-lg w-[260px] min-h-[360px] relative"
-        >
-          <img
-            :src="el.image"
-            alt="rasm"
-            class="card-img object-cover object-center w-full "
-          />
-          <div class="card-body p-4">
-            <h2 class="text-green-900 text-xl">{{el.title}}</h2>
-            <strong class="text-2xl text-red-500">{{el.price}}$</strong>
-            <NuxtLink :to="`/product/${el.id}`" class="bg-cyan-500 block absolute bottom-4 px-3 py-1 focus:ring-2">
-              Details
-            </NuxtLink>
-          </div>
-        </div>
+        <Card v-for="(el, ind) in data" :key="ind" :product="el" />
       </div>
     </div>
   </div>
@@ -39,20 +22,23 @@
 const back = useRouter();
 const { data } = useFetch("https://fakestoreapi.com/products");
 
-console.log(data);
+const {name}=useRoute();
+
+useHead({
+  title: `${name} page of Fakestore App`,
+  meta: [
+    { name: "description", content: `${name} page of Fakestore App` },
+    { name: "author", content: "Nuxt3 app " },
+  ],
+});
+
 </script>
 
 <style lang="scss" scoped>
 .wrapper {
   display: grid;
-  grid-template-columns: repeat( auto-fill, minmax( 260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 30px;
   padding-top: 30px;
-}
-
-.card-img {
-  transform: scale(0.6);
-  height: 200px;
-  object-fit: contain;
 }
 </style>
