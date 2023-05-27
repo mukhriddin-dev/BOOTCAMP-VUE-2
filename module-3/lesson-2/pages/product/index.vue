@@ -20,9 +20,9 @@
 
 <script setup>
 const back = useRouter();
-const { data } = useFetch("https://fakestoreapi.com/products");
-
-const {name}=useRoute();
+const { data } =await useFetch("https://fakestoreapi.com/products");
+console.log(data)
+const {name}=useRoute();  
 
 useHead({
   title: `${name} page of Fakestore App`,
